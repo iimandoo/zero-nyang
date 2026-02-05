@@ -14,11 +14,48 @@ export function FinalCTA() {
   const [hasLiked, setHasLiked] = useState(false);
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLike = () => {
-    if (!hasLiked) {
-      setLikeCount((prev) => prev + 1);
-      setHasLiked(true);
+  // 초기 좋아요 개수 로드
+  useEffect(() => {
+    const fetchLikeCount = async () => {
+      try {
+        const response = await fetch('/api/likes');
+        if (response.ok) {
+          const data = await response.json();
+          setLikeCount(data.count);
+        }
+      } catch (error) {
+        console.error('좋아요 개수 로드 실패:', error);
+      }
+    };
+
+    fetchLikeCount();
+  }, []);
+
+  const handleLike = async () => {
+    if (!hasLiked && !isLoading) {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/api/likes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setLikeCount(data.count);
+          setHasLiked(true);
+        } else {
+          console.error('좋아요 증가 실패');
+        }
+      } catch (error) {
+        console.error('좋아요 증가 중 오류:', error);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
