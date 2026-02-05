@@ -199,7 +199,7 @@ export function FinalCTA() {
                   하라냥!
                 </h3>
                 <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 sm:mb-10 text-center px-4">
-                  사전 예약하면 특별 혜택을 드린다
+                  사전 예약하면 '1개월 무료 체험' 특별 혜택
                 </p>
 
                 <form
@@ -228,24 +228,6 @@ export function FinalCTA() {
                   </Button>
                 </form>
 
-                {/* 혜택 안내 */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="mt-8 sm:mt-10 bg-slate-50  p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl"
-                >
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-900 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Gift className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-bold text-slate-900 text-base sm:text-lg">
-                        1개월 무료 체험
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           ) : (
