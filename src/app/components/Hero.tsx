@@ -57,10 +57,6 @@ export function Hero() {
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
-          {/* 제로 캐릭터 */}
-          <motion.div className="mb-8 md:mb-12 text-9xl">
-            🐾
-          </motion.div>
 
           {/* 메인 카피 */}
           <motion.div
@@ -82,8 +78,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 md:mb-12 leading-relaxed max-w-3xl mx-auto px-4"
           >
-            상대방은 고민 없이 툭 던진 말인데,
-            <br />왜 집사만 머리 싸매고 고민하냥?
+            읽씹은 찝찝하고 답장은 답답할 때, 멘탈 비서 제로
           </motion.p>
 
           {/* 제로의 한마디 */}
