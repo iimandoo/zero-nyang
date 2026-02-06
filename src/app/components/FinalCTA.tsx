@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import zeroImage from "figma:asset/7bdd78b52fda747da38bcea9e119dcff36853292.png";
+import { trackLike, trackEmailSubmit } from "../../utils/analytics";
 
 export function FinalCTA() {
   const [likeCount, setLikeCount] = useState(4285);
@@ -44,6 +45,10 @@ export function FinalCTA() {
           const data = await response.json();
           setLikeCount(data.count);
           setHasLiked(true);
+          // Google Analytics 이벤트 추적
+          if (typeof trackLike === 'function') {
+            trackLike();
+          }
         } else {
           console.error("좋아요 증가 실패");
         }
@@ -72,6 +77,10 @@ export function FinalCTA() {
           const data = await response.json();
           setIsSubmitted(true);
           console.log("Email submitted:", data.email);
+          // Google Analytics 이벤트 추적
+          if (typeof trackEmailSubmit === 'function') {
+            trackEmailSubmit(email);
+          }
         } else {
           const errorData = await response.json();
           alert(errorData.error || "이메일 등록에 실패했습니다.");
