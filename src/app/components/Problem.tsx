@@ -11,7 +11,7 @@ const problems = [
   {
     emoji: "🤔",
     message: "나니까 이런 말 해주는 거야.",
-    context: "친구가 가장한 가스라이팅",
+    context: "친구를 가장한 가스라이팅",
     highlight: "나니까",
   },
 ];
@@ -21,10 +21,13 @@ export function Problem() {
     <section className="py-16 sm:py-24 md:py-32 bg-white relative overflow-hidden">
       {/* 배경 패턴 */}
       <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-          backgroundSize: '30px 30px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
+            backgroundSize: "30px 30px",
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -39,7 +42,9 @@ export function Problem() {
           >
             <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-6 sm:mb-8 border border-red-100">
               <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="text-xs sm:text-sm font-semibold">집사 긴급 점검</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                집사 긴급 점검
+              </span>
             </div>
             <h2 className="black-han-sans-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
               집사야,
@@ -70,7 +75,7 @@ export function Problem() {
                   {/* 카카오톡 헤더 */}
                   <div className="bg-[#95A8BA] px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between border-b border-slate-400/30">
                     <div className="flex items-center gap-2 sm:gap-3">
-                      <motion.div 
+                      <motion.div
                         className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-slate-400 to-slate-500 rounded-full flex items-center justify-center text-2xl sm:text-3xl"
                         animate={{ rotate: [0, -5, 5, 0] }}
                         transition={{ duration: 0.5, delay: index * 0.2 + 1 }}
@@ -78,8 +83,9 @@ export function Problem() {
                         {problem.emoji}
                       </motion.div>
                       <div>
-                        <p className="font-bold text-slate-800 text-xs sm:text-sm">{problem.context}</p>
-                        <p className="text-[10px] sm:text-xs text-slate-600">1</p>
+                        <p className="font-bold text-slate-800 text-xs sm:text-sm">
+                          {problem.context}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -91,7 +97,7 @@ export function Problem() {
                   <div className="p-3 sm:p-4 min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
                     {/* 상대방 메시지 */}
                     <div className="flex items-start gap-2">
-                      <motion.div 
+                      <motion.div
                         className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-slate-400 to-slate-500 rounded-full flex-shrink-0 flex items-center justify-center text-xl sm:text-2xl"
                         animate={{ rotate: [0, -5, 5, 0] }}
                         transition={{ duration: 0.5, delay: index * 0.2 + 1 }}
@@ -117,7 +123,9 @@ export function Problem() {
                       <span className="text-lg sm:text-xl">+</span>
                     </button>
                     <div className="flex-1 bg-slate-100 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2">
-                      <p className="text-[10px] sm:text-xs text-slate-400">메시지 입력</p>
+                      <p className="text-[10px] sm:text-xs text-slate-400">
+                        메시지 입력
+                      </p>
                     </div>
                     <button className="bg-slate-200 text-slate-400 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs font-semibold">
                       전송

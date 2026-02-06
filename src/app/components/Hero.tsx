@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
-import zeroImage from "figma:asset/7bdd78b52fda747da38bcea9e119dcff36853292.png";
 
 export function Hero() {
   const scrollToNext = () => {
@@ -57,7 +56,6 @@ export function Hero() {
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
-
           {/* 메인 카피 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

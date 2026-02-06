@@ -33,9 +33,9 @@ export const initGA = (measurementId: string) => {
 };
 
 // 페이지뷰 추적
-export const trackPageView = (path: string) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('config', process.env.VITE_GA_MEASUREMENT_ID || '', {
+export const trackPageView = (path: string, measurementId?: string) => {
+  if (typeof window.gtag === 'function' && measurementId) {
+    window.gtag('config', measurementId, {
       page_path: path,
     });
   }
