@@ -41,7 +41,7 @@ export function Problem() {
               <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
               <span className="text-xs sm:text-sm font-semibold">집사 긴급 점검</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+            <h2 className="black-han-sans-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
               집사야,
               <br />
               <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">

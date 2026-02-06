@@ -1,8 +1,4 @@
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-} from "motion/react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 import { Heart, Gift, Sparkles, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
@@ -20,13 +16,13 @@ export function FinalCTA() {
   useEffect(() => {
     const fetchLikeCount = async () => {
       try {
-        const response = await fetch('/api/likes');
+        const response = await fetch("/api/likes");
         if (response.ok) {
           const data = await response.json();
           setLikeCount(data.count);
         }
       } catch (error) {
-        console.error('좋아요 개수 로드 실패:', error);
+        console.error("좋아요 개수 로드 실패:", error);
       }
     };
 
@@ -37,10 +33,10 @@ export function FinalCTA() {
     if (!hasLiked && !isLoading) {
       setIsLoading(true);
       try {
-        const response = await fetch('/api/likes', {
-          method: 'POST',
+        const response = await fetch("/api/likes", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         });
 
@@ -49,10 +45,10 @@ export function FinalCTA() {
           setLikeCount(data.count);
           setHasLiked(true);
         } else {
-          console.error('좋아요 증가 실패');
+          console.error("좋아요 증가 실패");
         }
       } catch (error) {
-        console.error('좋아요 증가 중 오류:', error);
+        console.error("좋아요 증가 중 오류:", error);
       } finally {
         setIsLoading(false);
       }
@@ -64,10 +60,10 @@ export function FinalCTA() {
     if (email && !isLoading) {
       setIsLoading(true);
       try {
-        const response = await fetch('/api/email', {
-          method: 'POST',
+        const response = await fetch("/api/email", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({ email }),
         });
@@ -78,12 +74,12 @@ export function FinalCTA() {
           console.log("Email submitted:", data.email);
         } else {
           const errorData = await response.json();
-          alert(errorData.error || '이메일 등록에 실패했습니다.');
-          console.error('이메일 등록 실패:', errorData);
+          alert(errorData.error || "이메일 등록에 실패했습니다.");
+          console.error("이메일 등록 실패:", errorData);
         }
       } catch (error) {
-        console.error('이메일 등록 중 오류:', error);
-        alert('이메일 등록 중 오류가 발생했습니다. 다시 시도해주세요.');
+        console.error("이메일 등록 중 오류:", error);
+        alert("이메일 등록 중 오류가 발생했습니다. 다시 시도해주세요.");
       } finally {
         setIsLoading(false);
       }
@@ -190,12 +186,10 @@ export function FinalCTA() {
               className="relative"
             >
               <div className="relative bg-white border-2 border-slate-200 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-[2rem] shadow-2xl">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 sm:mb-4 text-center px-6">
+                <h3 className="black-han-sans-regular text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 sm:mb-4 text-center px-6">
                   지금 예약하고
                   <br />
-                  <span className="text-slate-900">
-                    호구 탈출
-                  </span>
+                  <span className="text-slate-900">호구 탈출</span>
                   하라냥!
                 </h3>
                 <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 sm:mb-10 text-center px-4">
@@ -227,7 +221,6 @@ export function FinalCTA() {
                     사전 예약 특별 혜택 받기
                   </Button>
                 </form>
-
               </div>
             </motion.div>
           ) : (
@@ -251,16 +244,13 @@ export function FinalCTA() {
                     환영한다냥!
                   </h3>
                   <p className="text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 opacity-90">
-                    <span className="font-semibold break-all">
-                      {email}
-                    </span>
+                    <span className="font-semibold break-all">{email}</span>
                     로
                     <br />
                     확인 메일을 보냈다냥.
                   </p>
                   <p className="text-base sm:text-lg md:text-xl opacity-80">
-                    제로가 곧 집사를 도와줄 준비를 하고 있다냥!
-                    😸
+                    제로가 곧 집사를 도와줄 준비를 하고 있다냥! 😸
                   </p>
                 </motion.div>
               </div>
@@ -293,7 +283,7 @@ export function FinalCTA() {
                 </div>
 
                 {/* 서명 */}
-                <p className="text-center text-slate-900 mt-3 sm:mt-4 font-bold text-sm sm:text-base md:text-lg">
+                <p className="black-han-sans-regular text-center text-slate-900 mt-3 sm:mt-4 font-bold text-sm sm:text-base md:text-lg">
                   - 제로 🐾
                 </p>
               </div>

@@ -64,7 +64,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 text-slate-900 leading-tight px-4">
+            <h1 className="black-han-sans-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 text-slate-900 leading-tight px-4">
               언제까지 '넵!'만
               <br />
               할꺼냥?

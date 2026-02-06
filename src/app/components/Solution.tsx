@@ -36,7 +36,7 @@ export function Solution() {
               <Scan className="w-3 h-3 sm:w-4 sm:h-4" />
               <span className="text-xs sm:text-sm font-semibold">AI 엑스레이 분석</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+            <h2 className="black-han-sans-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
               본심 엑스레이로
               <br />
               <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
